@@ -5,9 +5,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "name": "nodemon",
+      "program": "${workspaceFolder}/server/index.js",
+      "request": "launch",
+      "restart": true,
+      "runtimeExecutable": "nodemon",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
       "type": "node",
       "request": "attach",
-      "name": "Attach",
+      "name": "Node Debugger",
       "sourceMaps": true,
       "port": 9229,
       "protocol": "inspector"
@@ -18,6 +29,15 @@
       "name": "Launch Chrome",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program (ANALYZE)",
+      "program": "${workspaceRoot}/server/index.js",
+      "env": {
+        "ANALYZE": "true"
+      }
     }
   ]
 }
